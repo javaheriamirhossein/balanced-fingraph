@@ -54,7 +54,8 @@ learn_kcomp_heavytail_graph <- function(X,
                                         maxiter = 10000,
                                         reltol = 1e-5,
                                         verbose = TRUE,
-                                        record_objective = FALSE) {
+                                        record_objective = FALSE
+                                        wmax = 0.05) {
   X <- scale(as.matrix(X))
   # number of nodes
   p <- ncol(X)
@@ -105,6 +106,9 @@ learn_kcomp_heavytail_graph <- function(X,
     eta <- 1 / (2*rho * (2*p - 1))
     wi <- w - eta * grad
     wi[wi < 0] <- 0
+
+    # Adding the following simple line of code avoids very strong connections that lead to isolated nodes
+    wi <- pmin(wi, wmax, na.rm = TRUE)
     Lwi <- L(wi)
     # update U
     U <- eigen(Lwi, symmetric = TRUE)$vectors[, (p - k + 1):p]
