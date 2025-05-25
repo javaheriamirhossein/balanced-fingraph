@@ -1,10 +1,5 @@
-# fingraph
-[![codecov](https://codecov.io/gh/convexfi/fingraph/branch/main/graph/badge.svg?token=OhreF1p2Yt)](https://app.codecov.io/gh/convexfi/fingraph)
-
-
-This repo contains ADMM implementations to estimate weighted undirected graphs
-(Markov random fields) under Student-t assumptions with applications to financial
-markets.
+This repo, forked from **fingraph**, contains the R code for balanced undirected graph learning from data
+with Student-t distribution applied to financial data clustering. 
 
 ## Installation
 
@@ -50,11 +45,11 @@ colnames(crypto_prices)
 log_returns <- diff(log(crypto_prices), na.pad = FALSE)
 
 # estimate a weighted, undirected graph (markov random field)
-graph_mrf <- learn_kcomp_heavytail_graph(scale(log_returns),
-                                         k = 8,
-                                         heavy_type = "student",
-                                         nu = fit_mvt(scale(log_returns))$nu,
-                                         verbose = FALSE)
+graph_mrf <- learn_kcomp_heavytail_graph_balanced(scale(log_returns),
+                                                   k = 8,
+                                                   heavy_type = "student",
+                                                   nu = fit_mvt(scale(log_returns))$nu,
+                                                   verbose = FALSE)
 
 # plot network
 net <- graph_from_adjacency_matrix(graph_mrf$adjacency,
@@ -110,12 +105,12 @@ colnames(stock_prices)
 log_returns <- diff(log(stock_prices), na.pad = FALSE)
 
 # estimate a weighted, undirected graph (markov random field)
-graph_mrf <- learn_kcomp_heavytail_graph(scale(log_returns),
-                                         rho = 10,
-                                         k = 3,
-                                         heavy_type = "student",
-                                         nu = fit_mvt(scale(log_returns))$nu,
-                                         verbose = FALSE)
+graph_mrf <- learn_kcomp_heavytail_graph_balanced(scale(log_returns),
+                                                 rho = 10,
+                                                 k = 3,
+                                                 heavy_type = "student",
+                                                 nu = fit_mvt(scale(log_returns))$nu,
+                                                 verbose = FALSE)
 #> Warning in tclass.xts(x): index does not have a 'tclass' attribute
 
 #> Warning in tclass.xts(x): index does not have a 'tclass' attribute
@@ -153,15 +148,18 @@ plot(net, vertex.label = colnames(stock_prices),
 ## Citation
 If you made use of this software please consider citing:
 
--   [Cardoso JVM](https://mirca.github.io), [Ying J](https://github.com/jxying),
-    [Palomar DP](https://www.danielppalomar.com) (2021).
-    [Graphical Models in Heavy-Tailed Markets](https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html).
-    [Advances in Neural Information Processing Systems](https://neurips.cc/Conferences/2021) (NeurIPS’21).
+- ## Citation
+Please cite:
 
-## Links
-- [RFinance'23 Slides](https://github.com/mirca/rfinance-talk/blob/main/rfinance.pdf)
-- [NeurIPS’21 Slides](https://palomar.home.ece.ust.hk/papers/2021/CardosoYingPalomar-NeurIPS2021-slides.pdf)
-- [NeurIPS'21 Poster](https://palomar.home.ece.ust.hk/papers/2021/CardosoYingPalomar-NeurIPS2021-poster.png)
-- [NeurIPS'21 Supplementary Material](https://palomar.home.ece.ust.hk/papers/2021/CardosoYingPalomar-NeurIPS2021-supplemental.pdf)
-- [CRAN Package](https://cran.r-project.org/package=fingraph)
+-   [A Javaheri](https://javaheriamirhossein.github.io/), [JVM Cardoso](https://mirca.github.io), and
+    [DP Palomar](https://www.danielppalomar.com)
+    [Graph Learning for Balanced Clustering of Heavy-Tailed Data]([https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html](https://ieeexplore.ieee.org/abstract/document/10403460)).
+    [2023 IEEE 9th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing]([https://neurips.cc/Conferences/2021](https://ieeexplore.ieee.org/xpl/conhome/10402605/proceeding)) (CAMSAP 2023).
+
+-   [JVM Cardoso](https://mirca.github.io), [J Ying](https://github.com/jxying),
+    [DP Palomar](https://www.danielppalomar.com) (2021).
+    [Graphical Models in Heavy-Tailed Markets](https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html).
+    [Advances in Neural Information Processing Systems](https://neurips.cc/Conferences/2021) (NeurIPS 2021).
+
+
 
