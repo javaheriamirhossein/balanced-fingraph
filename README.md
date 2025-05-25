@@ -137,10 +137,8 @@ plot(net, vertex.label = colnames(stock_prices),
 
 <img src="man/figures/README-plot_sp500_stocks_network-1.png" width="75%" style="display: block; margin: auto;" />
 
-## Citation
-If you made use of this software please consider citing:
 
-- ## Citation
+## Citation
 Please cite:
 
 -   [A Javaheri](https://javaheriamirhossein.github.io/), [JVM Cardoso](https://mirca.github.io) and
