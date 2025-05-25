@@ -3,14 +3,18 @@ Title: Learning Graphs for Financial Markets
 Version: 0.1.0
 Date: 2023-02-02
 Description: Learning graphs for financial markets with optimization algorithms.
-    This package contains implementations of the algorithms described in the paper:
-    Cardoso JVM, Ying J, and Palomar DP (2021) <https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html>
+    This package contains implementations of the algorithms described in these papers:
+    A. Javaheri, J. V. De M. Cardoso and D. P. Palomar (2023) <https://ieeexplore.ieee.org/abstract/document/10403460>
+    "Graph Learning for Balanced Clustering of Heavy-Tailed Data," 2023 IEEE 9th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing (CAMSAP), 2023
+    J. V. De M. Cardoso, J. Ying, and D. P. Palomar (2021) <https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html>
     "Learning graphs in heavy-tailed markets", Advances in Neural Informations Processing Systems (NeurIPS).
 Authors@R: c(
   person("Ze", "Vinicius", role = c("cre", "aut"), email = "jvmirca@gmail.com"),
-  person("Daniel", "Palomar", role = c("aut"), email = "daniel.p.palomar@gmail.com"))
-URL: https://github.com/convexfi/fingraph/
-BugReports: https://github.com/convexfi/fingraph/issues
+  person("Amirhossein", "Javaheri", role = c("aut"), email = "javaheriamirhosein@gmail.com"),
+  person("Daniel", "Palomar", role = c("aut"), email = "daniel.p.palomar@gmail.com"),
+)
+URL: https://github.com/javaheriamirhossein/balanced-fingraph
+BugReports: https://github.com/javaheriamirhossein/balanced-fingraph/issues
 License: GPL-3
 Encoding: UTF-8
 Depends: spectralGraphTopology
