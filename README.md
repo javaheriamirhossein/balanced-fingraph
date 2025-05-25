@@ -3,18 +3,10 @@ with Student-t distribution applied to financial data clustering.
 
 ## Installation
 
-**fingraph** depends on the development version of **spectralGraphTopology**,
-which can be installed as:
-
 ```r
 > devtools::install_github("convexfi/spectralGraphTopology")
-```
+> devtools::install_github("javaheriamirhossein/Balanced-Financial-Graph")
 
-The stable version of **fingraph** can be installed directly from CRAN:
-
-```r
-> install.packages("fingraph")
-```
 
 #### Microsoft Windows
 On MS Windows environments, make sure to install the most recent version of ``Rtools``.
