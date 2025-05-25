@@ -8,7 +8,7 @@ Description: Learning graphs for financial markets with optimization algorithms.
     "Learning graphs in heavy-tailed markets", Advances in Neural Informations Processing Systems (NeurIPS).
 Authors@R: c(
   person("Ze", "Vinicius", role = c("cre", "aut"), email = "jvmirca@gmail.com"),
-  person("Daniel", "Palomar", role = c("cre", "aut"), email = "daniel.p.palomar@gmail.com"))
+  person("Daniel", "Palomar", role = c("aut"), email = "daniel.p.palomar@gmail.com"))
 URL: https://github.com/convexfi/fingraph/
 BugReports: https://github.com/convexfi/fingraph/issues
 License: GPL-3
