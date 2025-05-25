@@ -151,13 +151,13 @@ If you made use of this software please consider citing:
 - ## Citation
 Please cite:
 
--   [A Javaheri](https://javaheriamirhossein.github.io/), [JVM Cardoso](https://mirca.github.io), and
-    [DP Palomar](https://www.danielppalomar.com)
+-   [A Javaheri](https://javaheriamirhossein.github.io/), [JVM Cardoso](https://mirca.github.io) and
+    [DP Palomar](https://www.danielppalomar.com),
     [Graph Learning for Balanced Clustering of Heavy-Tailed Data]([https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html](https://ieeexplore.ieee.org/abstract/document/10403460)).
-    [2023 IEEE 9th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing]([https://neurips.cc/Conferences/2021](https://ieeexplore.ieee.org/xpl/conhome/10402605/proceeding)) (CAMSAP 2023).
+    [2023 IEEE 9th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing](https://ieeexplore.ieee.org/xpl/conhome/10402605/proceeding) (CAMSAP 2023).
 
--   [JVM Cardoso](https://mirca.github.io), [J Ying](https://github.com/jxying),
-    [DP Palomar](https://www.danielppalomar.com) (2021).
+-   [JVM Cardoso](https://mirca.github.io), [J Ying](https://github.com/jxying) and
+    [DP Palomar](https://www.danielppalomar.com),
     [Graphical Models in Heavy-Tailed Markets](https://papers.nips.cc/paper/2021/hash/a64a034c3cb8eac64eb46ea474902797-Abstract.html).
     [Advances in Neural Information Processing Systems](https://neurips.cc/Conferences/2021) (NeurIPS 2021).
 
