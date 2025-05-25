@@ -2,5 +2,6 @@
 
 export(learn_connected_graph)
 export(learn_kcomp_heavytail_graph)
+export(learn_kcomp_heavytail_graph_balanced)
 export(learn_regular_heavytail_graph)
 import(spectralGraphTopology)
