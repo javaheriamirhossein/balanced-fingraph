@@ -1,10 +1,10 @@
 This repo, forked from **fingraph**, contains the R code for balanced undirected graph learning from data
 with Student-t distribution applied to financial data clustering. 
 
-## Installation
+## Installation in R
 
 ```r
-> devtools::install_github("convexfi/spectralGraphTopology")
+> install.packages(spectralGraphTopology)
 > devtools::install_github("javaheriamirhossein/balanced-fingraph")
 ```
 
