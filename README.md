@@ -5,7 +5,7 @@ with Student-t distribution applied to financial data clustering.
 
 ```r
 > devtools::install_github("convexfi/spectralGraphTopology")
-> devtools::install_github("javaheriamirhossein/Balanced-Financial-Graph")
+> devtools::install_github("javaheriamirhossein/balanced-fingraph")
 ```
 
 #### Microsoft Windows
