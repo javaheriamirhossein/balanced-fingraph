@@ -1,7 +1,7 @@
-#' @title Plot a clustering graph from Laplacian matrix
+#' @title Plot a clustering graph from adjacency matrix
 #'
-#' Plots a clustering graph based on a given Laplacian matrix and the ground-truth labels for the clusters.
-#' @param Laplacian p by p Laplacian matrix.
+#' Plots a clustering graph based on a given adjacency matrix and the ground-truth labels for the clusters.
+#' @param adjacency p by p adjacency matrix.
 #' @param true_labels the numeric vector of true labels (of length p)
 #' @param node_names the vector of names of the nodes, e.g., stocks (of length p)
 #' @param implied_clusters whether to color the nodes based on implied clusters or not
