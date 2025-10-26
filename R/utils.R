@@ -203,29 +203,30 @@ project_circle <- function(z0, d, u) {
 
 
 
-evaluate_clustering <- function(net, stock_sectors_index, p, q) {
+evaluate_clustering <- function(net, true_labels, p, q) {
   labels_pred <- rep(0, p)
+  memberships <- igraph::components(net)$membership
   for (j in 1:q){
-    idx <- igraph::components(net)$membership %in% c(j)
-    labels_pred[idx] <- Mode(stock_sectors_index[idx])
+    idx <- memberships %in% c(j)
+    labels_pred[idx] <- Mode(true_labels[idx])
   }
   
-  mask <- labels_pred != stock_sectors_index
-  purity_Fin <- 1- sum(mask)/length(mask)
+  mask <- labels_pred != true_labels
+  purity <- 1- sum(mask)/length(mask)
   
   
-  
-  labels_pred_adj <- igraph::components(net)$membership 
+  labels_pred <- memberships
+  labels_pred_sorted <- labels_pred 
   perms <- permn(c(1:q))
   acc_max <- 0
   for (k in 1:length(perms)){
     perm <- perms[[k]]
     for (j in 1:q){
-      idx <- labels_pred %in% j
-      labels_pred_adj[idx] <- perm[j]
+      idx <- memberships %in% j
+      labels_pred_sorted[idx] <- perm[j]
       
     }
-    mask <- labels_pred_adj != stock_sectors_index
+    mask <- labels_pred_sorted != true_labels
     acc <- 1- sum(mask)/length(mask)
     if (acc>= acc_max) {
       acc_max <- acc
@@ -235,28 +236,28 @@ evaluate_clustering <- function(net, stock_sectors_index, p, q) {
   perm <- perms[[ind_max]]
   for (j in 1:q){
     idx <- labels_pred %in% j
-    labels_pred_adj[idx] <- perm[j]
+    labels_pred_sorted[idx] <- perm[j]
   }
   
-  NMI_val <- randnet::NMI(labels_pred_adj, stock_sectors_index)
+  NMI <- randnet::NMI(labels_pred_sorted, true_labels)
   
-  ARI <- mclust::adjustedRandIndex(labels_pred_adj, stock_sectors_index)
-  mask <- labels_pred_adj != stock_sectors_index
-  accuracy_adj <- 1- sum(mask)/length(mask)
+  ARI <- mclust::adjustedRandIndex(labels_pred_sorted, true_labels)
+  mask <- labels_pred_sorted != true_labels
+  accuracy <- 1- sum(mask)/length(mask)
   
   
   
 
-  mod_gt <- modularity(net, stock_sectors_index)
+  mod_gt <- modularity(net, true_labels)
   
   balanced_norm <- Balancedness_norm(net, p, q)
   GINI_metric <- GINI(net)
   
-  metrics <- list( labels_pred = labels_pred,  labels_pred_adj = labels_pred_adj,  
-                   accuracy = accuracy_adj, purity = purity_Fin, 
+  metrics <- list( memberships = memberships,  labels_pred = labels_pred_sorted,  
+                   accuracy = accuracy, purity = purity, 
                    mod = mod_gt,
                    balanced = balanced_norm, GINI = GINI_metric,
-                   NMI = NMI_val, ARI = ARI)
+                   NMI = NMI, ARI = ARI)
   return( metrics )
 }
 
