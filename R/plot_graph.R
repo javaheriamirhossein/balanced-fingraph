@@ -88,7 +88,7 @@ plot_graph <- function(adjacency, true_labels, node_names = NULL,
          layout = layout,
          vertex.label.family = "Helvetica", vertex.label.color = "black",
          vertex.shape = c(rep("circle", p)),
-         edge.width = 3 * E(graph_net)$weight
+         edge.width = 8 * E(graph_net)$weight
     )
   }
   
@@ -125,7 +125,7 @@ plot_graph <- function(adjacency, true_labels, node_names = NULL,
          layout = layout,
          vertex.label.family = "Helvetica", vertex.label.color = "black",
          vertex.shape = c(rep("circle", p)),
-         edge.width = 3 * E(graph_net)$weight
+         edge.width = 8 * E(graph_net)$weight
     )
     
   }
