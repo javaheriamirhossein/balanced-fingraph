@@ -1,8 +1,8 @@
-Package: fingraph
-Title: Learning Graphs for Financial Markets
+Package: balancedfingraph
+Title: Learning Balanced Graphs for Financial Markets
 Version: 0.1.0
 Date: 2023-02-02
-Description: Learning graphs for financial markets with optimization algorithms.
+Description: Learning balanced graphs for financial markets.
     This package contains implementations of the algorithms described in these papers:
     A. Javaheri, J. V. De M. Cardoso and D. P. Palomar (2023) <https://ieeexplore.ieee.org/abstract/document/10403460>
     "Graph Learning for Balanced Clustering of Heavy-Tailed Data," 2023 IEEE 9th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing (CAMSAP), 2023
@@ -26,7 +26,4 @@ Imports:
 Suggests:
     testthat
 RoxygenNote: 7.1.1
-VignetteBuilder:
-    knitr,
-    rmarkdown,
-    R.rsp
+
