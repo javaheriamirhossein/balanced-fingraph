@@ -1,4 +1,4 @@
-This repo, forked from **fingraph**, contains the R code for balanced undirected graph learning from data
+This repository contains the R code for balanced undirected graph learning from data
 with Student-t distribution applied to financial data clustering. 
 
 ## Installation in R
